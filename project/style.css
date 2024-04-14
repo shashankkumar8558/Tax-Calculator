@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  min-height: 80%;
+  min-width: 60%;
+  background-color: #a79277;
+  border-radius: 10px;
+}
+
+.form {
+  background-color: #d1bb9e;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 3px;
+  width: 70%;
+  box-shadow: rgb(134, 134, 134) 5px 5px 3px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  max-width: 80%;
+  position: relative;
+}
+
+.form input,
+.form select {
+  min-width: 80%; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.calculation {
+  height: 10%;
+  width: 10%;
+  text-align: center;
+}
+
+.calculation button {
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  font-size: larger;
+  width: 100%;
+}
+
+.calculation button:hover {
+  background-color: #d1bb9e;
+  transition: background-color 0.3s ease; 
+}
+
+.fas.fa-question-circle {
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: #4f8aaf;
+  color: #2e2d2d;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 8px;
+  line-height: 1;
+
+  top: calc(100% + 5px); 
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 10;
+  white-space: nowrap;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; 
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #333;
+  }
+}
+
+.error-icon {
+  display: none;
+  color: red; 
+  margin-left: 5px;
+  cursor: pointer; 
+  position: relative; 
+}
+.error-icon:hover {
+  font-size: smaller;
+}
+.fas.fa-question-circle:hover {
+  font-size: smaller;
+}
+
+.error-icon[data-tooltip]:hover::after {
+  content: attr(data-tooltip); 
+  position: absolute;
+  background-color: #ffcccc; 
+  color: red; 
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 1;
+  top: calc(100% + 5px); 
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 10;
+  white-space: nowrap;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; 
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #333;
+  }
+}
+
+#result {
+  display: none; 
+  min-width: 30%;
+  min-height: 30%;
+  background-color: bisque;
+  text-align: center;
+  font-size: larger;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 100; 
+}

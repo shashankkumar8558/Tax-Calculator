@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <title>Tax Calculation</title>
+</head>
+<body>
+  <div class="container">
+    <h1>TAX CALCULATOR</h1>
+    <div class="form">
+      <label for="gross-income">
+         Gross Annual Income (₹):<i class="fas fa-question-circle" data-tooltip="Enter your gross annual income before any deductions."></i>
+    </label>
+      <input type="text" id="gross-income" name="grossIncome" placeholder="Enter Gross Annual Income" required>
+      <i id="error-gross-income" class="fas fa-exclamation-circle error-icon" data-tooltip="Invalid input, Only numeric values greater than zero are allowed."></i>
+      <br>
+
+      <label for="number2">
+       Enter Extra Income :<i class="fas fa-question-circle" data-tooltip="Your extra income from other sources, if any."></i>
+      </label>
+      <input type="text" placeholder="Enter Extra Income From Other Sources" id="number2" optional>
+      <i id="error-extra-income" class="fas fa-exclamation-circle error-icon" data-tooltip="Invalid input, Only numeric values greater than zero are allowed."></i>
+      <br>
+      <label for="age">
+      Age Group :<i class="fas fa-question-circle" data-tooltip="Your age is mandatory for calculating Tax"></i>
+      </label>
+      <select id="age" name="age" required>
+        <option value="">Select Age Group</option>
+        <option value="under 40">Less than 40</option>
+        <option value="between 40 and 60">40 to less than 60</option>
+        <option value="over 60">60 or more</option>
+      </select>
+      <i id="error-age" class="fas fa-exclamation-circle error-icon" data-tooltip="This Input Field Is mandatory."></i>
+      <br>
+
+      <label for="number3">
+      Enter Total Applicable Deduction:<i class="fas fa-question-circle" data-tooltip="deductions from your total income."></i>
+      </label>
+      <input type="text" placeholder="Deduction" id="number3" optional>
+      <i id="error-deduction" class="fas fa-exclamation-circle error-icon" data-tooltip="Invalid input, Only numeric values greater than zero are allowed."></i>
+    </div>
+    <br>
+    <div class="calculation">
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+  <div id="result"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
